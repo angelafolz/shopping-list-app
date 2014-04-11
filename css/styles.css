@@ -1,0 +1,134 @@
+body {
+	background-color: #EBEBEB;
+	font: bold 40px/40px Arial, sans-serif;
+	color: #52595F;
+}
+
+.container {
+	width: 650px;
+	margin: 100px auto;
+}
+
+input[type="text"] {
+	width: 360px;
+	height: 60px;
+	padding: 0 20px;
+	margin: 45px 0 0 80px;
+	font: bold 40px/50px Arial, sans-serif;
+	color: #52595F;
+	border: none;
+}
+
+input[type="submit"] {
+	background: url(../images/plus.png) no-repeat top center;
+	width: 150px;
+	height: 150px;
+	border: none;
+	cursor: pointer;
+	float: right;
+}
+input[type="submit"]:hover {
+	background-image: url(../images/plus-hov.png)
+}
+
+.list {
+	margin: 60px 0 0 40px;
+}
+
+.list li {
+	margin-bottom: 12px;
+	position: relative;
+	padding: 0 60px;
+	padding-right: 130px;
+}
+
+.checked {
+	color: #999999;
+	text-decoration: line-through;
+}
+
+.starred {
+	color: #FFCC00;
+}
+
+.actions {
+	display: none;
+	height: 36px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.check {
+	background-image: url(../images/check.png);
+	left: 0;
+}
+.check:hover {
+	background-image: url(../images/check-hov.png);
+}
+
+.delete {
+	background-image: url(../images/x.png);
+	right: 90px;
+}
+.delete:hover {
+	background-image: url(../images/x-hov.png);
+}
+
+.star {
+	background-image: url(../images/star.png);
+	right: 50px;
+}
+.star:hover {
+	background-image: url(../images/star-hov.png);
+}
+
+.actions div {
+	width: 36px;
+	height: 40px;
+	background-repeat: no-repeat;
+	background-position: top left;
+	position: absolute;
+	top: 0;
+}
+.actions div:hover {
+	cursor: pointer;
+}
+
+.list li:hover .actions {
+	display: block;
+}
+
+@media screen and (max-width: 639px) {
+	.container {
+		width: 80%;
+		margin: 20% 10%;
+	}
+	
+	input[type="text"] {
+		width: 60%;
+		margin: 0;
+	}
+	input[type="submit"] {
+		height: 60px;
+		width: 60px;
+		background-image: url(../images/plus-sm.png);
+	}
+	input[type="submit"]:hover {
+		background-image: url(../images/plus-sm-hov.png);
+	}
+	
+	.list {
+		margin-left: -10%;
+	}
+
+	.list li, input[type="text"] {
+		font-size: 28px;
+		line-height: 28px;	
+	}
+	
+	.actions {
+		top: -6px;
+	}
+}
