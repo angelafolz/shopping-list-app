@@ -1,6 +1,6 @@
 body {
-	background-color: #EBEBEB;
-	font: bold 40px/40px Arial, sans-serif;
+	background-color: #E6E6E6;
+	font: bold 40px/50px Arial, sans-serif;
 	color: #52595F;
 }
 
@@ -18,6 +18,30 @@ input[type="text"] {
 	color: #52595F;
 	border: none;
 }
+input[type="text"]:focus {
+	outline: none;
+	box-shadow: 1px 1px 1px #ccc inset;
+}
+
+.shake {
+	position: relative;
+	-webkit-animation: shake 0.5s; /* Chrome, Safari, Opera */
+	animation: shake 0.5s;
+}
+@-webkit-keyframes shake { /* Chrome, Safari, Opera */
+	0%   {background-color: #FFB2B2; left: 0; top: 0;}
+	25%  {left: 10px; top: 0;}
+	50%  {left: -10px; top: 0;}
+	75%  {left: 10px; top: 0;}
+	100% {left: 0; top: 0;}
+}
+@keyframes shake { /* Standard syntax */
+	0%   {background-color: #FFB2B2; left: 0; top: 0;}
+	25%  {left: 10px; top: 0;}
+	50%  {left: -10px; top: 0;}
+	75%  {left: 10px; top: 0;}
+	100% {left: 0; top: 0;}
+}
 
 input[type="submit"] {
 	background: url(../images/plus.png) no-repeat top center;
@@ -30,6 +54,9 @@ input[type="submit"] {
 input[type="submit"]:hover {
 	background-image: url(../images/plus-hov.png)
 }
+input[type="submit"]:focus {
+	outline: none;
+}
 
 .list {
 	margin: 60px 0 0 40px;
@@ -38,8 +65,10 @@ input[type="submit"]:hover {
 .list li {
 	margin-bottom: 12px;
 	position: relative;
-	padding: 0 60px;
+	padding-left: 60px;
 	padding-right: 130px;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
 }
 
 .checked {
