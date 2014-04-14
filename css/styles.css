@@ -7,6 +7,7 @@ body {
 .container {
 	width: 650px;
 	margin: 100px auto;
+	position: relative;
 }
 
 input[type="text"] {
@@ -23,33 +24,15 @@ input[type="text"]:focus {
 	box-shadow: 1px 1px 1px #ccc inset;
 }
 
-.shake {
-	position: relative;
-	-webkit-animation: shake 0.5s; /* Chrome, Safari, Opera */
-	animation: shake 0.5s;
-}
-@-webkit-keyframes shake { /* Chrome, Safari, Opera */
-	0%   {background-color: #FFB2B2; left: 0; top: 0;}
-	25%  {left: 10px; top: 0;}
-	50%  {left: -10px; top: 0;}
-	75%  {left: 10px; top: 0;}
-	100% {left: 0; top: 0;}
-}
-@keyframes shake { /* Standard syntax */
-	0%   {background-color: #FFB2B2; left: 0; top: 0;}
-	25%  {left: 10px; top: 0;}
-	50%  {left: -10px; top: 0;}
-	75%  {left: 10px; top: 0;}
-	100% {left: 0; top: 0;}
-}
-
 input[type="submit"] {
 	background: url(../images/plus.png) no-repeat top center;
 	width: 150px;
 	height: 150px;
 	border: none;
 	cursor: pointer;
-	float: right;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 input[type="submit"]:hover {
 	background-image: url(../images/plus-hov.png)

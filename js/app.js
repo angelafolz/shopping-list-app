@@ -12,10 +12,7 @@ $(document).ready(function(){
 			input.val("").removeAttr("placeholder");		// I couldn't figure out a way to only run .removeAttr("placeholder") the first time an item is added. Thoughts?
 		}
 		else {
-			input.addClass("shake").focus();		// I couldn't get this to work as a jQuery animation instead of css animation
-			setTimeout(function(){
-				input.removeClass("shake");
-			}, 500);
+			input.effect("shake", "slow").focus();		// brief red background? sandwiching .animate({backgroundColor: "#FFB2B2"}, 50) and .animate({backgroundColor: "#FFF"}, 50) around .effect(...) makes the red last too long
 		}
 	});
 
