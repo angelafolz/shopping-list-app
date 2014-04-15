@@ -53,6 +53,9 @@ input[type="submit"]:focus {
 	overflow-x: hidden;
 	text-overflow: ellipsis;
 }
+.list li:hover {
+	cursor: move;
+}
 
 .checked {
 	color: #999999;
@@ -137,10 +140,19 @@ input[type="submit"]:focus {
 
 	.list li, input[type="text"] {
 		font-size: 28px;
-		line-height: 28px;	
+		line-height: 38px;	
 	}
 	
-	.actions {
-		top: -6px;
+	.list li {
+		padding-left: 40px;
+		padding-right: 70px;
+	}
+	
+	.star {
+		right: 0;
+	}
+	
+	.delete {
+		right: 36px;
 	}
 }
