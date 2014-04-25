@@ -6,9 +6,9 @@ $(document).ready(function(){
 
 	// add item to list
 	submit.click(function(){
-		var new_item = input.val();		// this variable is only used in this part of the code, but would it still be better to define it globally so it isn't recreated every time an item is added to the list? A: actually in this instance it needs to be inside the function, d'oh!
+		var new_item = input.val();
 		if(new_item) {
-			list.prepend($('<li>' + new_item + '<div class="actions"><div class="check"></div><div class="delete"></div><div class="star"></div></div></li>'));		// is it better to stay consistent and use "<div class=\"actions\"> ... " ? A: switching is more readable
+			list.prepend($('<li>' + new_item + '<div class="actions"><div class="check"></div><div class="delete"></div><div class="star"></div></div></li>'));
 			input.val("").removeAttr("placeholder");		// I couldn't figure out a way to only run .removeAttr("placeholder") the first time an item is added. Thoughts? A: could track with variable
 		}
 		else {
@@ -41,5 +41,10 @@ $(document).ready(function(){
 	list.sortable();
 
 	// detect touch screen, check etc stay instead of hover. goes here
+	if (Modernizr.touch) {
+		alert("Touch Screen");
+	} else {
+		alert("No Touch Screen");
+	}
 
 });
