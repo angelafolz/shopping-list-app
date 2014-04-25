@@ -9,10 +9,15 @@ $(document).ready(function(){
 		var new_item = input.val();
 		if(new_item) {
 			list.prepend($('<li>' + new_item + '<div class="actions"><div class="check"></div><div class="delete"></div><div class="star"></div></div></li>'));
-			input.val("").removeAttr("placeholder");		// I couldn't figure out a way to only run .removeAttr("placeholder") the first time an item is added. Thoughts? A: could track with variable
+			input.val("").removeAttr("placeholder");
+
+			// detect touch screen, check etc stay instead of showing on hover
+			if (Modernizr.touch) {
+				list.find(".actions").show();
+			}
 		}
 		else {
-			input.effect("shake", "slow").focus();		// brief red background? sandwiching .animate({backgroundColor: "#FFB2B2"}, 50) and .animate({backgroundColor: "#FFF"}, 50) around .effect(...) makes the red last too long A: try dequeue?
+			input.effect("shake", "slow").focus();
 		}
 	});
 
@@ -39,10 +44,5 @@ $(document).ready(function(){
 
 	// make list sortable by dragging items
 	list.sortable();
-
-	// detect touch screen, check etc stay instead of showing on hover
-	if (Modernizr.touch) {
-		list.find(".actions").show();
-	}
 
 });
