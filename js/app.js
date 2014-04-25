@@ -40,11 +40,9 @@ $(document).ready(function(){
 	// make list sortable by dragging items
 	list.sortable();
 
-	// detect touch screen, check etc stay instead of hover. goes here
+	// detect touch screen, check etc stay instead of showing on hover
 	if (Modernizr.touch) {
-		alert("Touch Screen");
-	} else {
-		alert("No Touch Screen");
+		list.find(".actions").show();
 	}
 
 });
